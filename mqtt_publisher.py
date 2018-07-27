@@ -38,8 +38,8 @@ while True:
             lst.append(res)
 
     if not lst:
-        continue
         print("Empty scan results")
+        continue
     else:
         scan_result['iBeacon_Scan_Results'] = lst
         print(json.dumps(scan_result))
