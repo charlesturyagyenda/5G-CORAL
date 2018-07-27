@@ -7,7 +7,7 @@ broker_address = "192.168.0.103"
 broker_port = 8246
 
 scan = btle.Scanner()
-sec = 1
+sec = 2
 
 client1 = mqtt.Client("EFS_App/Fun_Publisher")  # create client object
 client1.connect(broker_address, broker_port)  # establish connection
