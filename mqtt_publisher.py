@@ -1,4 +1,5 @@
 import paho.mqtt.client as mqtt
+import time
 import json
 from bluepy import btle
 
@@ -38,6 +39,7 @@ while True:
 
     if not lst:
         continue
+        print("Empty scan results")
     else:
         scan_result['iBeacon_Scan_Results'] = lst
         print(json.dumps(scan_result))
