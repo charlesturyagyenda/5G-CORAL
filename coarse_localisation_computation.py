@@ -37,7 +37,7 @@ def on_message(client, userdata, message):
 
 
 Connected = False  # global variable for the state of the connection
-broker_address = "10.6.224.107"
+broker_address = "192.168.0.103"
 broker_port = 8246
 
 client2 = mqttClient.Client("Coarse_Localisation_Computation")  # create new instance
