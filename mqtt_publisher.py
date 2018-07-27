@@ -3,7 +3,7 @@ import time
 import json
 from bluepy import btle
 
-broker_address = "10.6.224.107"
+broker_address = "192.168.0.103"
 broker_port = 8246
 
 scan = btle.Scanner()
