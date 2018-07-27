@@ -1,5 +1,4 @@
 import paho.mqtt.client as mqtt
-import time
 import json
 from bluepy import btle
 
@@ -37,8 +36,9 @@ while True:
             res['Device_RSSI'] = rssi
             lst.append(res)
 
-    scan_result['iBeacon_Scan_Results'] = lst
-    print(json.dumps(scan_result))
-
-    client1.publish("5G-CORAL_Coarse_Localisation/IDCC_Robot/iBeacon_Scan_Report/", json.dumps(scan_result))
-    time.sleep(1)
+    if not lst:
+        continue
+    else:
+        scan_result['iBeacon_Scan_Results'] = lst
+        print(json.dumps(scan_result))
+        client1.publish("5G-CORAL_Coarse_Localisation/IDCC_Robot/iBeacon_Scan_Report/", json.dumps(scan_result))
