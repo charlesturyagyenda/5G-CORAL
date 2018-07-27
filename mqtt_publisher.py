@@ -37,10 +37,10 @@ while True:
             res['Device_RSSI'] = rssi
             lst.append(res)
 
-    if not lst:
-        print("Empty scan results")
-        continue
-    else:
+    if len(lst) != 0:
         scan_result['iBeacon_Scan_Results'] = lst
         print(json.dumps(scan_result))
         client1.publish("5G-CORAL_Coarse_Localisation/IDCC_Robot/iBeacon_Scan_Report/", json.dumps(scan_result))
+    else:
+        print("Empty scan results")
+        continue
